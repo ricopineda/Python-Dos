@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title> Views page </title>
+		</head>
+		<body>
+		<h2> Posted by {{ user.name }} {{user.id}} </h2>
+		{% for user in quote %}
+			<h5> {{ user.quote_by}} </h5>
+			<h3> {{ user.message }} </h3>
+			<a href="delete/{{user.id}}" method="post"> <button> Delete </button> </a>
+			
+		{% endfor %}	
+		</body>
+		<p></p>
+		<a href="home"> <button> Home </button></a>
+		<a href="logout"> <button> Logout </button></a>
+	</html>

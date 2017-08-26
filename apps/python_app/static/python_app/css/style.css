@@ -1,0 +1,42 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.wrapper{
+	width: 1300px;
+	height: 1000px;
+	background-color: gray;
+}
+
+
+.right{
+	width: 500px;
+	height: 800px;
+	border: 1px solid black;
+	overflow: scroll;
+	display: inline-block;
+}
+
+.right div{
+	width: 400px;
+	height: 150px;
+	border: 1px solid black;
+	display: inline-block;
+}
+
+.left{
+	width: 500px;
+	height: 800px;
+	border: 1px solid black;
+	overflow: scroll;
+	display: inline-block;
+}
+
+.left div{
+	width: 400px;
+	height: 150px;
+	border: 1px solid black;
+	display: inline-block;
+}

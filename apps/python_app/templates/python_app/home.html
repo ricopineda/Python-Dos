@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title> Home Page </title>
+			{% load static %}
+			<link rel="stylesheet" href="{% static 'python_app/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+		</head>
+		<body>
+			<div class="wrapper">
+				<h1> Welcome {{ user.name }} </h1>
+				<form action="logout" method="post">
+					{% csrf_token %}
+					<input type="submit" value="Logout">
+				</form>
+				<form action="add" method="post">>
+					{% csrf_token %}
+					<label for="quote_by"> Quote by </label><input type="text" name="quote_by">
+					<label for="message"> Message </label><textarea rows="4" cols="50" name="message">  </textarea>
+					<input type="submit" value="Add Quote">
+				</form>
+				
+				<div class="right">
+				{% for quote in users %}
+					<div>
+						<form action="add_list" method="post"> 
+						{% csrf_token %}
+						  <h3> {{ quote.message }} </h3>
+						<input type="submit" value="Add to Fav" name="add"> 
+						</form>
+						<h3> Provided by <a href="/view"> {{ user.name }} </a>  </h3>
+					</div>	
+				{% endfor %}			
+				</div>
+				<div class="left">
+				{% for quote in fav %}
+					<div>
+						<h3> {{ quote.message }} </h3>
+					</div>
+				{% endfor %}	
+				</div>
+			</div>	
+		</body>
+	</html>
